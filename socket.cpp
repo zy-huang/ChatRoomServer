@@ -20,7 +20,7 @@ int Socket(int domain, int type, int protocol){
 
 const struct sockaddr* GetSockaddr(struct sockaddr_in* addr, int port, const char*sin_addr){
     addr->sin_family = AF_INET;
-    addr->sin_port = htonl(port);
+    addr->sin_port = htons(port);
     addr->sin_addr.s_addr = inet_addr(sin_addr);
     return (struct sockaddr*)addr;
 }
